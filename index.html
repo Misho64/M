@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>دعوة زفاف مشعل وم</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eadcc3;--card:#f7efdf;--ink:#4a1220;--soft:#7a6a5a;--acc:#7b1e34;--line:#cdb68c;color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2a0d15;--card:#3b1420;--ink:#f1e4cc;--soft:#c9b79b;--acc:#e0a3b0;--line:#6a2d3c;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#2a0d15;--card:#3b1420;--ink:#f1e4cc;--soft:#c9b79b;--acc:#e0a3b0;--line:#6a2d3c;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100vh;background:var(--bg);color:var(--ink);font-family:"Amiri","Traditional Arabic",serif;font-size:20px;line-height:1.9;display:flex;align-items:center;justify-content:center;padding:24px 16px;
+background-image:repeating-conic-gradient(from 45deg at 50% 50%,transparent 0 25%,color-mix(in srgb,var(--acc) 7%,transparent) 0 50%);background-size:56px 56px}
+h1,h2{font-family:"Reem Kufi","Amiri",serif;font-weight:700}
+.panel{width:100%;max-width:460px;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:30px 22px;text-align:center;outline:1px solid var(--line);outline-offset:-10px}
+h1{font-size:30px;line-height:1.4;margin:0 0 4px}
+.sub{color:var(--soft);margin:0 0 16px;font-size:19px;line-height:1.7}
+.board{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;transition:gap .6s;direction:ltr}
+.board.done{gap:0}
+.tile{touch-action:none;user-select:none;-webkit-user-select:none;aspect-ratio:1;padding:0;border:0;border-radius:3px;background:none;cursor:pointer;overflow:hidden;margin:0;display:block;width:100%}
+.tile svg{width:100%;height:100%;display:block}
+.tile.sel{outline:4px solid var(--acc);outline-offset:-4px}
+.tile:focus-visible,button:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.board.done .tile{border-radius:0;pointer-events:none}
+.msg{min-height:30px;margin:10px 0 0;color:var(--ink);font-size:18px}
+button.ghost{font-family:"Reem Kufi","Amiri",serif;font-size:18px;background:none;color:var(--acc);border:0;text-decoration:underline;padding:6px;cursor:pointer}
+#prev{display:none;width:45%;margin:8px auto 0;border:1px solid var(--line);border-radius:3px}
+#invite{display:none}
+#invite.show{display:block;animation:rise .8s ease-out}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.seal{width:80px;height:80px;margin:0 auto 6px;color:var(--acc);display:block}
+.names{font-family:"Amiri","Traditional Arabic",serif;font-size:44px;line-height:1.5;margin:4px 0}
+.amp{color:var(--acc);font-size:30px;display:block;line-height:1}
+.rule{height:1px;background:var(--line);margin:20px 40px}
+.lbl{color:var(--soft);font-size:17px}
+.val{font-size:23px;font-weight:700;margin-bottom:6px}
+.heart{position:fixed;top:-30px;color:var(--acc);pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(40deg);opacity:.2}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<g id="art">
+<rect width="300" height="200" fill="#f3e6cf"/>
+<path d="M30 200V95a120 120 0 0 1 240 0V200Z" fill="#ead8b8" stroke="#c9a96a" stroke-width="2"/>
+<path d="M150 46c-22-14-22-34-6-34a9 9 0 0 1 6 4a9 9 0 0 1 6-4c16 0 16 20-6 34z" fill="#7b1e34"/>
+<path d="M178 72a27 27 0 0 1 54 0L244 192H166Z" fill="#fffaf0" stroke="#d9c79a" stroke-width="2"/>
+<path d="M205 112l-14 20-30 68h88l-30-68z" fill="#fff" stroke="#d9c79a" stroke-width="2"/>
+<rect x="193" y="128" width="24" height="5" fill="#7b1e34"/>
+<circle cx="205" cy="76" r="20" fill="#e8bd98"/>
+<path d="M185 74a20 20 0 0 1 40 0q-20-12-40 0z" fill="#3a2218"/>
+<path d="M55 200V140q0-24 25-28h30q25 4 25 28V200Z" fill="#7b1e34"/>
+<path d="M95 112 83 152h24z" fill="#fff"/>
+<path d="M95 122l-12-7v13zM95 122l12-7v13z" fill="#3d0c18"/>
+<rect x="87" y="92" width="16" height="22" fill="#d9a982"/>
+<circle cx="95" cy="75" r="22" fill="#e8bd98"/>
+<path d="M73 72a22 22 0 0 1 44 0q-22-13-44 0z" fill="#2b1a14"/>
+<rect x="118" y="146" width="44" height="12" rx="6" fill="#5e1628"/>
+<circle cx="164" cy="152" r="6" fill="#e8bd98"/>
+<circle cx="172" cy="158" r="7" fill="#8b2a40"/><circle cx="180" cy="152" r="6" fill="#b4546a"/><circle cx="178" cy="164" r="6" fill="#6d1a2e"/>
+<rect y="192" width="300" height="8" fill="#c9a96a"/>
+</g></defs></svg>
+
+<main class="panel">
+<section id="gate">
+<h1>رتّب القطع</h1>
+<p class="sub">اسحب القطعة وأفلتها فوق قطعة أخرى لتبديل مكانهما (أو اضغط على قطعتين)، وركّب صورة العريس والعروس لتُفتح الدعوة</p>
+<div class="board" id="board" aria-label="لوحة الأحجية"></div>
+<p class="msg" id="msg" role="status"></p>
+<button class="ghost" id="peek" type="button">أرني الصورة الصحيحة</button>
+<svg id="prev" viewBox="0 0 300 200" aria-label="الصورة الصحيحة"><use href="#art"/></svg>
+</section>
+
+<section id="invite">
+<svg class="seal" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3"><rect x="22" y="22" width="56" height="56"/><rect x="22" y="22" width="56" height="56" transform="rotate(45 50 50)"/><circle cx="50" cy="50" r="9" fill="currentColor"/></g></svg>
+<p class="sub">بسم الله الرحمن الرحيم</p>
+<h2 class="names">مشعل<span class="amp">&amp;</span>م</h2>
+<p>يتشرّف الأهل والأحباب بدعوتكم لمشاركتنا فرحة العمر في حفل زفاف مشعل وم</p>
+<div class="rule"></div>
+<div class="lbl">التاريخ</div><div class="val" id="d"></div>
+<div class="lbl">الوقت</div><div class="val" id="t"></div>
+<div class="lbl">المكان</div><div class="val" id="p"></div>
+<div class="rule"></div>
+<p class="sub">حضوركم يسعدنا ودعاؤكم يكمل فرحتنا</p>
+</section>
+</main>
+
+<script>
+// عدّل التفاصيل هنا
+var CONFIG={date:"السبت ٢ فبراير ٢٠٣٠م",hijri:"الموافق ٢٩ رمضان ١٤٥١هـ",time:"٨:٠٠ مساءً",place:"دار الطالب، الدار البيضاء، المغرب"};
+
+var board=document.getElementById("board"),msg=document.getElementById("msg");
+var order=[0,1,2,3,4,5],sel=-1,moves=0,locked=false;
+function derange(){var ok=false;while(!ok){for(var i=5;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=order[i];order[i]=order[j];order[j]=t}ok=order.every(function(v,i){return v!==i})}}
+function render(){
+  board.innerHTML="";
+  order.forEach(function(k,i){
+    var b=document.createElement("button");
+    b.type="button";b.className="tile"+(i===sel?" sel":"");
+    b.setAttribute("aria-label","قطعة في الخانة "+(i+1));
+    b.innerHTML='<svg viewBox="'+(k%3)*100+' '+Math.floor(k/3)*100+' 100 100"><use href="#art"/></svg>';
+    b.onpointerdown=function(e){drag(e,i,b)};
+    b.onclick=function(e){if(e.detail===0)tap(i)};
+    board.appendChild(b);
+  });
+}
+function tap(i){
+  if(locked)return;
+  if(sel<0){sel=i;render();return}
+  if(sel===i){sel=-1;render();return}
+  swap(sel,i);
+}
+function swap(a,b){
+  var t=order[a];order[a]=order[b];order[b]=t;sel=-1;moves++;render();
+  msg.textContent="عدد النقلات: "+moves;
+  if(order.every(function(v,i){return v===i}))win();
+}
+function drag(e,i,b){
+  if(locked)return;
+  var x0=e.clientX,y0=e.clientY,moved=false;
+  b.setPointerCapture(e.pointerId);
+  b.onpointermove=function(ev){
+    var dx=ev.clientX-x0,dy=ev.clientY-y0;
+    if(!moved&&Math.hypot(dx,dy)>8){moved=true;b.style.zIndex=5;b.style.opacity=".9"}
+    if(moved)b.style.transform="translate("+dx+"px,"+dy+"px) scale(1.06)";
+  };
+  b.onpointerup=function(ev){
+    b.onpointermove=b.onpointerup=b.onpointercancel=null;
+    if(!moved){tap(i);return}
+    var r=board.getBoundingClientRect();
+    var c=Math.floor((ev.clientX-r.left)/(r.width/3)),w=Math.floor((ev.clientY-r.top)/(r.height/2));
+    var j=w*3+c;
+    if(c>=0&&c<3&&w>=0&&w<2&&j!==i)swap(i,j);else{sel=-1;render()}
+  };
+  b.onpointercancel=function(){b.onpointermove=b.onpointerup=b.onpointercancel=null;render()};
+}
+function hearts(){for(var i=0;i<26;i++){var h=document.createElement("span");h.className="heart";h.textContent="♥";h.style.left=Math.random()*100+"vw";h.style.fontSize=(14+Math.random()*20)+"px";h.style.animationDuration=(3+Math.random()*3)+"s";h.style.animationDelay=(Math.random()*1.2)+"s";document.body.appendChild(h);setTimeout(function(x){x.remove()},7500,h)}}
+function win(){
+  locked=true;board.className="board done";msg.textContent="أحسنت! اكتملت الصورة";
+  setTimeout(function(){
+    document.getElementById("gate").style.display="none";
+    document.getElementById("d").innerHTML=CONFIG.date+"<br>"+CONFIG.hijri;
+    document.getElementById("t").textContent=CONFIG.time;
+    document.getElementById("p").textContent=CONFIG.place;
+    document.getElementById("invite").className="show";
+    hearts();
+  },1500);
+}
+document.getElementById("peek").onclick=function(){var p=document.getElementById("prev");p.style.display=p.style.display==="block"?"none":"block"};
+derange();render();
+</script>
+</body>
+</html>
